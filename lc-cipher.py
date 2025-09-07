@@ -1,21 +1,22 @@
 # id_ru_cipher_menu.py
 # Latin A–Z <-> Cyrillic Ж–Я substitution cipher
-# Dengan menu interaktif, hasil selalu UPPERCASE
+# Dengan menu interaktif, hasil selalu LOWERCASE
 
 LATIN = "QWERTYUIOPASDFGHJKLZXCVBNM 0123456789"
 CYRILLIC = "ЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ ०१२३४५६७८९"
 
 ENC_MAP = {l: c for l, c in zip(LATIN, CYRILLIC)}
-
 DEC_MAP = {c: l for l, c in zip(LATIN, CYRILLIC)}
 
 def encrypt(text: str) -> str:
-    text = text.upper()
-    return "".join(ENC_MAP.get(ch, ch) for ch in text)
+    text = text.upper()  
+    encrypted_text = "".join(ENC_MAP.get(ch, ch) for ch in text)
+    return encrypted_text.lower()  
 
 def decrypt(text: str) -> str:
-    text = text.upper()
-    return "".join(DEC_MAP.get(ch, ch) for ch in text)
+    text = text.upper()  
+    decrypted_text = "".join(DEC_MAP.get(ch, ch) for ch in text)
+    return decrypted_text.lower()  
 
 def main():
     while True:
