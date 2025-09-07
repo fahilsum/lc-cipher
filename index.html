@@ -147,7 +147,7 @@
       } else {
         result = [...text].map(ch => decMap.get(ch) || ch).join("");
       }
-      resultBox.value = result; //pakai value .jika textarea | pakai .innerText jika div
+      resultBox.value = result.toLowerCase();
     }
 
     function clearText() {
@@ -182,3 +182,4 @@
   </script>
 </body>
 </html>
+
