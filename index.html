@@ -6,15 +6,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <title>Latin ⇄ Cyrillic Cipher</title>
   <style>
-    /* DEFAULT: LIGHT THEME */
+    /* DEFAULT: DARK THEME */
     body {
       font-family: "Poppins", sans-serif;
-      background: #f2f2f2;
-      color: #000;
+      background: #0b152e; /* biru gelap */
+      color: #e0e0e0;
       padding: 20px;
       text-align: center;
     }
     h1 {
+      color: #ffffff;
       margin-bottom: 20px;
     }
     textarea, #result {
@@ -23,13 +24,15 @@
       height: 250px;
       padding: 8px;
       border-radius: 6px;
-      border: 1px solid #ccc;
+      border: 1px solid #415a77;
       resize: vertical;
       font-size: 15px;
       line-height: 1.4;
+      background: #1b263b;
+      color: #f5f5f5;
     }
     #result {
-      background: #fff;
+      background: #1b263b;
       text-align: left;
       white-space: pre-wrap;
       word-wrap: break-word;
@@ -41,13 +44,13 @@
       border: none;
       border-radius: 50px;
       cursor: pointer;
-      background: #4CAF50;
+      background: #0077b6;
       color: white;
       font-size: 14px;
       font-weight: bold;
     }
     button:hover {
-      background: #45a049;
+      background: #0096c7;
     }
     .container {
       display: flex;
@@ -58,37 +61,37 @@
     }
     .tips {
       font-size: 12px;
-      color: rgba(0,0,0,0.6);
+      color: rgba(255,255,255,0.6);
       max-width: 150px;
       text-align: left;
       line-height: 1.4;
     }
 
-    /* DARK-BLUE THEME */
-    body.dark {
-      background: #0d1b2a; /* biru gelap */
-      color: #e0e0e0;
+    /* LIGHT THEME */
+    body.light {
+      background: #f2f2f2;
+      color: #000;
     }
-    body.dark h1 {
-      color: #ffffff;
+    body.light h1 {
+      color: #000;
     }
-    body.dark textarea,
-    body.dark #result {
-      background: #1b263b;
-      border: 1px solid #415a77;
-      color: #f5f5f5;
+    body.light textarea,
+    body.light #result {
+      background: #fff;
+      border: 1px solid #ccc;
+      color: #000;
     }
-    body.dark #result {
-      background: #1b263b;
+    body.light #result {
+      background: #fff;
     }
-    body.dark button {
-      background: #0077b6;
+    body.light button {
+      background: #4CAF50;
     }
-    body.dark button:hover {
-      background: #0096c7;
+    body.light button:hover {
+      background: #45a049;
     }
-    body.dark .tips {
-      color: rgba(255,255,255,0.6);
+    body.light .tips {
+      color: rgba(0,0,0,0.6);
     }
 
     footer {
@@ -96,10 +99,10 @@
       bottom: 10px;
       left: 15px;
       font-size: 12px;
-      color: rgba(0,0,0,0.6);
-    }
-    body.dark footer {
       color: rgba(255,255,255,0.6);
+    }
+    body.light footer {
+      color: rgba(0,0,0,0.6);
     }
   </style>
 </head>
@@ -107,7 +110,7 @@
   <h1>Latin ⇄ Cyrillic Cipher</h1>
 
   <!-- toggle button -->
-  <button id="toggle-theme">🌙 Dark Mode</button>
+  <button id="toggle-theme">☀️ Light Mode</button>
   <div class="container">
     <!-- tips, input, output di sini -->
   </div>
@@ -125,7 +128,7 @@
     <textarea id="result" placeholder="Result will appear here..." readonly></textarea>
   </div>
 
-  <footer><a href="https://fahilsum.github.io/playlist" target="_blank" style="color:inherit;text-decoration:none;">@fahilsum</a></footer>
+  <footer><a href="https://fahilsum.github.io/" target="_blank" style="color:inherit;text-decoration:none;">@fahilsum</a></footer>
 
 
   <script>
@@ -171,15 +174,14 @@
     //toggle theme
     const toggleBtn = document.getElementById("toggle-theme");
     toggleBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      if (document.body.classList.contains("dark")) {
-        toggleBtn.textContent = "☀️ Light Mode";
-      } else {
+      document.body.classList.toggle("light");
+      if (document.body.classList.contains("light")) {
         toggleBtn.textContent = "🌙 Dark Mode";
+      } else {
+        toggleBtn.textContent = "☀️ Light Mode";
       }
     });
 
   </script>
 </body>
 </html>
-
